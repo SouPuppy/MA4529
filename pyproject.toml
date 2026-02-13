@@ -1,0 +1,33 @@
+[project]
+name = "horizon"
+version = "0.1.0"
+description = ""
+
+authors = [
+    {name = "Quin", email = "daokuanwu-2@my.cityu.edu.hk"},
+    {name = "Prabhat", email="phdubey2-c@my.cityu.edu.hk"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    
+]
+
+[tool.poetry]
+packages = [{include = "src", from = "."}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.poetry.scripts]
+main = "src.main:main"
+
+[dependency-groups]
+dev = [
+    "black (>=26.1.0,<27.0.0)"
+]
