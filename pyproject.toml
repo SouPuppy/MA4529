@@ -8,8 +8,10 @@ authors = [
     {name = "Prabhat", email="phdubey2-c@my.cityu.edu.hk"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
+    "yfinance (>=1.2.0,<2.0.0)",
+    "pandas (>=3.0.1,<4.0.0)"
     
 ]
 
