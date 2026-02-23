@@ -1,4 +1,4 @@
-# src/get_data.py
+# src/download_data.py
 
 import yfinance as yf
 import pandas as pd
