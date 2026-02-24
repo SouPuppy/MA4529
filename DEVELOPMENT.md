@@ -11,3 +11,9 @@ poetry install
 ```bash
 poetry run python -m <package>
 ```
+
+### Add a new package
+
+```
+poetry add <package>
+```

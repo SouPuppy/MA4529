@@ -36,10 +36,10 @@ We have added a script to download stock data from Yahoo Finance.
 
 Usage:
 ```bash
-poetry run python src/get_data.py AAPL 2023-01-01 2024-01-01
+poetry run python src/download_data.py AAPL 2023-01-01 2024-01-01
 ```
 
-Syntax: `poetry run python src/get_data.py [TICKER] [START] [END]`
+Syntax: `poetry run python src/download_data.py [TICKER] [START] [END]`
 
 Option:
 - `--interval`: Timeframe (e.g. `1wk`, `1mo`, `1h`). Default is `1d`.
