@@ -36,7 +36,7 @@ We have added a script to download stock data from Yahoo Finance.
 
 Usage:
 ```bash
-poetry run python src/download_data.py AAPL 2023-01-01 2024-01-01
+poetry run python src/download_data.py SPY 2023-01-01 2024-01-01
 ```
 
 Syntax: `poetry run python src/download_data.py [TICKER] [START] [END]`
@@ -52,11 +52,20 @@ Script: `src/download_options.py`
 Usage:
 
 ```bash
-# Download the nearest expiration date (0DTE)
-poetry run python src/download_options.py SPY
+# Download next 5 expiries automatically (recommended — run this now)
+python download_options.py SPY
 
-#Download a specific future expiration date
-poetry run python src/download-options.py SPY --expiry 2026-04-17
+# Download next 8 expiries
+python download_options.py SPY --n 8
+
+# Download one specific expiry
+python download_options.py SPY --expiry 2026-05-15
+
+# Save filtered AND unfiltered side by side
+python download_options.py SPY --save-raw
+
+# Skip the filter entirely
+python download_options.py SPY --no-filter
 ```
 
 Note: The options downloader script should only be run during US Market Hours
