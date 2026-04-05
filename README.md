@@ -15,7 +15,7 @@ hedging and analyse the impact on the final price.
 ### Initialize the Project
 
 ```
-postry install
+poetry install
 ```
 
 ### Run
@@ -29,3 +29,43 @@ poetry run main
 ```
 poetry add <package>
 ```
+
+## Downloading Historical Spot Prices 
+
+We have added a script to download stock data from Yahoo Finance.
+
+Usage:
+```bash
+poetry run python src/download_data.py SPY 2023-01-01 2024-01-01
+```
+
+Syntax: `poetry run python src/download_data.py [TICKER] [START] [END]`
+
+Option:
+- `--interval`: Timeframe (e.g. `1wk`, `1mo`, `1h`). Default is `1d`.
+- `--folder`:  Output location. Default is `data/`
+
+
+## Downloading Options Chains
+Script: `src/download_options.py`
+
+Usage:
+
+```bash
+# Download next 5 expiries automatically (recommended — run this now)
+python download_options.py SPY
+
+# Download next 8 expiries
+python download_options.py SPY --n 8
+
+# Download one specific expiry
+python download_options.py SPY --expiry 2026-05-15
+
+# Save filtered AND unfiltered side by side
+python download_options.py SPY --save-raw
+
+# Skip the filter entirely
+python download_options.py SPY --no-filter
+```
+
+Note: The options downloader script should only be run during US Market Hours
