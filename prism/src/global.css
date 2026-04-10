@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "./theme/tailwind.theme.css";
+
+/* Base resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  color: #0a0a0a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide lightweight-charts TradingView attribution */
+a[href*="tradingview.com"] {
+  display: none !important;
+}

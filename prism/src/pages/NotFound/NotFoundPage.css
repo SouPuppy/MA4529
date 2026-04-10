@@ -1,0 +1,152 @@
+.error-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fafafa;
+  color: #0a0a0a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+.error-content {
+  position: relative;
+  width: 480px;
+  max-width: 90%;
+  margin: 20px;
+  background: #ffffff;
+  padding: 60px 50px;
+  text-align: center;
+  border: 1px solid #d4d4d4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  animation: apparition 0.4s 0.1s cubic-bezier(0.39, 0.575, 0.28, 0.995) forwards;
+  z-index: 10;
+}
+
+.error-code {
+  font-size: 6.5rem;
+  font-weight: 350;
+  line-height: 1;
+  color: #0a0a0a;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.01em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.error-title {
+  font-size: 1rem;
+  margin: 0 0 2.5rem 0;
+  letter-spacing: 0.02em;
+  color: #737373;
+  font-weight: 400;
+  font-style: italic;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.error-content button {
+  display: inline-block;
+  margin-top: 0;
+  padding: 0.75rem 2rem;
+  border: 1.5px solid #171717;
+  background: transparent;
+  font-size: 0.875rem;
+  color: #171717;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0;
+  transition: all 0.2s ease;
+}
+
+.error-content button:hover {
+  background: #171717;
+  color: #ffffff;
+  border-color: #171717;
+}
+
+.particle {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+
+.formula-particle {
+  font-size: 16px;
+  color: #a3a3a3;
+}
+
+/* 25 formulas positioned */
+.particle:nth-child(1) { top: 8%; left: 5%; animation: 45s float infinite; }
+.particle:nth-child(2) { top: 52%; left: 12%; animation: 50s floatReverse infinite; }
+.particle:nth-child(3) { top: 85%; left: 18%; animation: 48s float2 infinite; }
+.particle:nth-child(4) { top: 18%; left: 25%; animation: 52s floatReverse2 infinite; }
+.particle:nth-child(5) { top: 65%; left: 32%; animation: 47s float infinite; }
+.particle:nth-child(6) { top: 92%; left: 39%; animation: 51s floatReverse infinite; }
+.particle:nth-child(7) { top: 28%; left: 46%; animation: 49s float2 infinite; }
+.particle:nth-child(8) { top: 72%; left: 53%; animation: 53s floatReverse2 infinite; }
+.particle:nth-child(9) { top: 12%; left: 60%; animation: 46s float infinite; }
+.particle:nth-child(10) { top: 48%; left: 67%; animation: 54s floatReverse infinite; }
+.particle:nth-child(11) { top: 88%; left: 74%; animation: 50s float2 infinite; }
+.particle:nth-child(12) { top: 22%; left: 81%; animation: 48s floatReverse2 infinite; }
+.particle:nth-child(13) { top: 58%; left: 88%; animation: 52s float infinite; }
+.particle:nth-child(14) { top: 95%; left: 95%; animation: 47s floatReverse infinite; }
+.particle:nth-child(15) { top: 35%; left: 8%; animation: 51s float2 infinite; }
+.particle:nth-child(16) { top: 68%; left: 15%; animation: 49s floatReverse2 infinite; }
+.particle:nth-child(17) { top: 15%; left: 22%; animation: 53s float infinite; }
+.particle:nth-child(18) { top: 45%; left: 29%; animation: 46s floatReverse infinite; }
+.particle:nth-child(19) { top: 78%; left: 36%; animation: 54s float2 infinite; }
+.particle:nth-child(20) { top: 25%; left: 70%; animation: 55s float infinite; }
+.particle:nth-child(21) { top: 60%; left: 78%; animation: 58s floatReverse infinite; }
+.particle:nth-child(22) { top: 82%; left: 58%; animation: 56s float2 infinite; }
+.particle:nth-child(23) { top: 38%; left: 85%; animation: 60s floatReverse2 infinite; }
+.particle:nth-child(24) { top: 75%; left: 10%; animation: 57s float infinite; }
+.particle:nth-child(25) { top: 10%; left: 43%; animation: 59s floatReverse infinite; }
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(120px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-120px);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(60px);
+  }
+}
+
+@keyframes floatReverse2 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+}

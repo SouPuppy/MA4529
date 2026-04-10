@@ -1,0 +1,162 @@
+@theme {
+  /* Professional financial UI color system */
+  --color-bg-primary: #fafafa;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f5f5f5;
+
+  /* Text hierarchy */
+  --color-text-primary: #0a0a0a;
+  --color-text-secondary: #525252;
+  --color-text-tertiary: #737373;
+  --color-text-muted: #a3a3a3;
+
+  /* Borders */
+  --color-border-light: #e5e5e5;
+  --color-border-medium: #d4d4d4;
+  --color-border-dark: #a3a3a3;
+
+  /* Financial semantic colors */
+  --color-positive: #059669;      /* emerald-600 */
+  --color-positive-bg: #d1fae5;   /* emerald-100 */
+  --color-negative: #dc2626;      /* red-600 */
+  --color-negative-bg: #fee2e2;   /* red-100 */
+  --color-neutral: #0284c7;       /* sky-600 */
+  --color-neutral-bg: #e0f2fe;    /* sky-100 */
+  --color-warning: #ea580c;       /* orange-600 */
+  --color-warning-bg: #ffedd5;    /* orange-100 */
+
+  /* Accent colors for charts and highlights */
+  --color-accent-blue: #2563eb;   /* blue-600 */
+  --color-accent-purple: #7c3aed; /* violet-600 */
+  --color-accent-teal: #0d9488;   /* teal-600 */
+  --color-accent-amber: #d97706;  /* amber-600 */
+
+  /* Interactive states */
+  --color-hover: #f5f5f5;
+  --color-active: #e5e5e5;
+  --color-focus: #3b82f6;
+
+  /* Typography */
+  --text-ui: 13px;
+  --leading-ui: 18px;
+
+  /* Aperture design system tokens */
+  --color-paper-white: #ffffff;
+  --color-ink-2b: #1f2937;
+  --color-ink-2d: #d1d5db;
+  --color-ink-5b: #6b7280;
+  --color-black-a05: rgba(0, 0, 0, 0.05);
+  --color-black-a10: rgba(0, 0, 0, 0.10);
+}
+
+@layer components {
+  /* Panel base - clean, minimal borders */
+  .panel {
+    @apply bg-white border border-neutral-200;
+  }
+
+  .panel-header {
+    @apply px-4 py-2.5 border-b border-neutral-200 bg-neutral-50;
+  }
+
+  .panel-body {
+    @apply p-4;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply px-3 py-1.5 text-sm font-medium transition-colors;
+    @apply border border-neutral-300 bg-white text-neutral-700;
+    @apply hover:bg-neutral-50 hover:border-neutral-400;
+    @apply active:bg-neutral-100;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white border-blue-600;
+    @apply hover:bg-blue-700 hover:border-blue-700;
+    @apply active:bg-blue-800;
+  }
+
+  .btn-sm {
+    @apply px-2 py-1 text-xs;
+  }
+
+  /* Input base */
+  .input {
+    @apply px-2 py-1.5 text-sm;
+    @apply border border-neutral-300 bg-white text-neutral-900;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    @apply disabled:bg-neutral-100 disabled:cursor-not-allowed;
+  }
+
+  /* Table styles for dense data */
+  .table-dense {
+    @apply w-full text-xs;
+  }
+
+  .table-dense th {
+    @apply px-2 py-1.5 text-left font-semibold text-neutral-600 bg-neutral-50 border-b border-neutral-200;
+  }
+
+  .table-dense td {
+    @apply px-2 py-1.5 border-b border-neutral-100 tabular-nums;
+  }
+
+  /* Metric display */
+  .metric {
+    @apply tabular-nums font-semibold;
+  }
+
+  .metric-label {
+    @apply text-xs font-medium text-neutral-500 uppercase tracking-wider;
+  }
+
+  .metric-value {
+    @apply text-lg font-semibold text-neutral-900 tabular-nums;
+  }
+
+  .metric-change {
+    @apply text-xs tabular-nums;
+  }
+
+  /* Aperture-style dropdown (bottom-border only, no rounding) */
+  .ap-dropdown-trigger {
+    @apply relative flex items-center justify-between border-b border-ink-2d bg-paper-white text-left outline-none transition cursor-pointer;
+    @apply px-0 py-0.5 pr-5 text-[13px] leading-[18px] text-ink-2b;
+    @apply hover:border-ink-5b focus:border-ink-2b;
+  }
+  .ap-dropdown-menu {
+    @apply absolute z-30 top-full left-0 mt-0.5 w-full min-w-[120px] max-h-48 overflow-y-auto border bg-paper-white shadow-md;
+    @apply border-black-a10 rounded-none;
+  }
+  .ap-dropdown-option {
+    @apply cursor-pointer px-2 py-1 text-[12px] leading-[18px] text-ink-2b whitespace-nowrap;
+    @apply hover:bg-black-a05;
+  }
+  .ap-dropdown-option-selected {
+    @apply bg-black-a05 font-medium;
+  }
+
+  /* Aperture-style pill presets (freq/horizon) */
+  .ap-pill {
+    @apply px-2 py-0.5 text-[11px] border transition-colors whitespace-nowrap;
+  }
+  .ap-pill-active {
+    @apply bg-ink-2b text-paper-white border-ink-2b;
+  }
+  .ap-pill-inactive {
+    @apply bg-paper-white text-ink-5b border-black-a10 hover:border-ink-5b hover:text-ink-2b;
+  }
+
+  /* Factor tab buttons */
+  .ap-factor-tab {
+    @apply px-2.5 py-2 text-[12px] border-b-2 transition-colors whitespace-nowrap;
+  }
+  .ap-factor-tab-active {
+    @apply border-ink-2b text-ink-2b font-semibold;
+  }
+  .ap-factor-tab-inactive {
+    @apply border-transparent text-ink-5b hover:text-ink-2b hover:border-ink-2d;
+  }
+}
