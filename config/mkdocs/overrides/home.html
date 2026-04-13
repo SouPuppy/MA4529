@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+  <style>
+    .hp { --md-grid-max-width: 80rem }
+    .md-header__title { visibility: hidden }
+    .hp { padding: 4rem 0 3.5rem; border-bottom: 1px solid var(--md-default-fg-color--lightest) }
+    .hp h1 { margin: 0 0 1rem; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; letter-spacing: -.04em; line-height: 1.04; max-width: none }
+    .hp__sub { margin: 0 0 2rem; max-width: 38rem; font-size: 1rem; line-height: 1.7; color: var(--md-default-fg-color--light) }
+    .hp .md-button { margin-right: .6rem }
+  </style>
+
+  <div class="hp md-grid md-typeset">
+    <h1>Quantitative trading infrastructure for C++20</h1>
+    <p class="hp__sub">Loom composes streaming pipelines from typed origins, transforms, and windows. Aurum orchestrates the execution engine — bus, cache, order flow, and portfolio state.</p>
+    <a href="{{ 'loom/overview/' | url }}" class="md-button md-button--primary">Get started</a>
+    <a href="{{ 'aurum/overview/' | url }}" class="md-button">Aurum overview</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="md-content" data-md-component="content">
+    <article class="md-content__inner md-typeset">
+      {{ page.content }}
+    </article>
+  </div>
+{% endblock %}

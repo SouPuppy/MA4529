@@ -1,0 +1,87 @@
+site_name: ABZU
+site_description: Quantitative Finance Platform
+
+theme:
+  name: material
+  custom_dir: config/mkdocs/overrides
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.sections
+    - content.footnote.tooltips # Footnote tooltips
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Lyra:
+      - Overview: lyra/overview.md
+      - Commands: lyra/Commands.md
+      - WebSocket API: lyra/websocket-api.md
+  - Loom:
+      - Overview: loom/overview.md
+      - Pipeline:
+          - Tutorial: loom/tutorial.md
+          - API: loom/pipeline.md
+      - Windows:
+          - Plugin System: loom/plugins.md
+          - Modules: loom/modules.md
+      - Clocks: loom/clocks.md
+      - Transforms: loom/transforms.md
+  - Aurum:
+      - Overview: aurum/overview.md
+      - Writing Programs: aurum/program.md
+      - Market Data:
+          - Topics & Messages: aurum/data/topics.md
+          - Cache System: aurum/data/cache.md
+      - Orders:
+          - Lifecycle: aurum/orders/lifecycle.md
+          - Risk Validation: aurum/orders/risk.md
+      - Portfolio:
+          - Cash Accounts: aurum/portfolio/account.md
+          - Positions: aurum/portfolio/position.md
+      - REST API: aurum/restful-api.md
+      - Kernel Internals: aurum/kernel-internals.md
+  - Strategies:
+      - Queue Aware Market Maker: strategy/Queue Aware Market Maker.md
+      - 多因子动量模型: strategy/多因子动量模型.md
+  - Finance:
+      - Option Pricing:
+          - Black-Scholes PDE: finance/Option Pricing/Black-Scholes PDE.md
+          - Ito's Lemma: finance/Option Pricing/Ito's Lemma.md
+          - Monte Carlo Option Pricing: finance/Option Pricing/Monte Carlo Option Pricing.md
+
+markdown_extensions:
+  # Annotations
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  # Foot Notes
+  - footnotes
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - md_in_html
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
